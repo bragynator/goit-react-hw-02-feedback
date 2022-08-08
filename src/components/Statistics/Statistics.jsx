@@ -1,4 +1,5 @@
 import { Notification } from '../Notification/Notification';
+import PropTypes from 'prop-types';
 
 export function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return total === 0 ? (
@@ -13,3 +14,11 @@ export function Statistics({ good, neutral, bad, total, positivePercentage }) {
     </ul>
   );
 }
+
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
+};
