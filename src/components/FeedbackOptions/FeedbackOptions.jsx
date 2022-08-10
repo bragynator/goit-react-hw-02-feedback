@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul onClick={onLeaveFeedback}>
-      {Object.keys(options).map((el, idx) => (
+      {options.map((el, idx) => (
         <li key={idx}>
           <button type="button">{el[0].toUpperCase() + el.slice(1)}</button>
         </li>
@@ -13,6 +13,6 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.objectOf(PropTypes.number),
+  options: PropTypes.arrayOf(PropTypes.string),
   onLeaveFeedback: PropTypes.func,
 };
